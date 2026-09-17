@@ -4,6 +4,7 @@ import { belgradeAreas } from "@/lib/belgrade-areas";
 import { contactInfo, telHref } from "@/lib/contact";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@repo/ui";
 import { ChevronDown, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const links: Array<{ href: string; label: string }> = [
@@ -18,8 +19,15 @@ export function SiteNav() {
   return (
     <header className="border-ink/10 border-b">
       <nav className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-6 py-4">
-        <Link href="/" className="font-semibold text-ink text-lg">
-          {contactInfo.companyName}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo-wordmark.png"
+            alt={contactInfo.companyName}
+            width={556}
+            height={301}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
           <DropdownMenu>

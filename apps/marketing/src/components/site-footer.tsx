@@ -1,5 +1,6 @@
 import { contactInfo, mailHref, telHref } from "@/lib/contact";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -7,8 +8,14 @@ export function SiteFooter() {
     <footer className="border-ink/10 border-t">
       <div className="mx-auto grid max-w-5xl gap-8 px-6 py-10 sm:grid-cols-3">
         <div>
-          <p className="font-semibold text-ink">{contactInfo.companyName}</p>
-          <p className="mt-2 text-muted-foreground text-sm">
+          <Image
+            src="/logo-wordmark.png"
+            alt={contactInfo.companyName}
+            width={556}
+            height={301}
+            className="h-8 w-auto"
+          />
+          <p className="mt-3 text-muted-foreground text-sm">
             Selidbe i prevoz u Beogradu i okolini — stambene i poslovne selidbe, pakovanje i
             transport osetljive robe.
           </p>

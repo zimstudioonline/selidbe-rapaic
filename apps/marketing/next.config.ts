@@ -16,6 +16,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   transpilePackages: ["@repo/config", "@repo/ui"],
+  // Cloudflare Workers nema podešan Images binding — bez ovoga next/image puca u produkciji.
+  images: { unoptimized: true },
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
