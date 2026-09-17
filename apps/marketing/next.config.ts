@@ -1,3 +1,4 @@
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import type { NextConfig } from "next";
 import "../../packages/config/env-load.mjs";
 
@@ -21,3 +22,6 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// Cloudflare Workers preview parity u `bun run dev` (vidi apps/marketing/wrangler.jsonc).
+initOpenNextCloudflareForDev();

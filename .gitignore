@@ -5,6 +5,10 @@ node_modules/
 .next/
 out/
 
+# cloudflare (opennextjs)
+.open-next/
+.wrangler/
+
 # turbo
 .turbo/
 
