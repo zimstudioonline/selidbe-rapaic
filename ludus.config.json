@@ -1,0 +1,15 @@
+{
+  "generator": "ludus-saas-generator",
+  "baseVersion": "0.6.0",
+  "projectName": "RapaicPrevoz",
+  "projectSlug": "rapaicprevoz",
+  "modules": ["analytics-google", "analytics-meta-pixel", "blog", "seo-aeo"],
+  "localPorts": {
+    "api": 54510,
+    "db": 54511,
+    "studio": 54512,
+    "inbucket": 54513,
+    "shadowDb": 54514
+  },
+  "warnings": []
+}
