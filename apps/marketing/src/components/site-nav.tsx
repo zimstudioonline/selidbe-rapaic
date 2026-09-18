@@ -30,24 +30,26 @@ export function SiteNav() {
           />
         </Link>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 text-ink/70 text-sm hover:text-primary">
+          <div className="flex items-center gap-0.5">
+            <Link href="/selidbe-beograd" className="text-ink/70 text-sm hover:text-primary">
               Selidbe Beograd
-              <ChevronDown className="size-3.5" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="max-h-96">
-              <DropdownMenuItem asChild>
-                <Link href="/selidbe-beograd" className="font-medium">
-                  Sve opštine
-                </Link>
-              </DropdownMenuItem>
-              {belgradeAreas.map((area) => (
-                <DropdownMenuItem key={area.slug} asChild>
-                  <Link href={`/selidbe-beograd/${area.slug}`}>Selidbe {area.name}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                aria-label="Prikaži opštine"
+                className="flex items-center p-1 text-ink/70 hover:text-primary"
+              >
+                <ChevronDown className="size-3.5" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="max-h-96">
+                {belgradeAreas.map((area) => (
+                  <DropdownMenuItem key={area.slug} asChild>
+                    <Link href={`/selidbe-beograd/${area.slug}`}>Selidbe {area.name}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
           {links.map((link) => (
             <Link
               key={link.href}
