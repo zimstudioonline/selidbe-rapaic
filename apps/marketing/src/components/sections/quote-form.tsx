@@ -1,12 +1,9 @@
 import { requestQuote } from "@/app/kontakt/actions";
 import { Button, Input, Label, Textarea } from "@repo/ui";
 
-const moveTypes = [
-  { value: "stambena", label: "Stambena selidba" },
-  { value: "poslovna", label: "Poslovna selidba" },
-  { value: "pakovanje", label: "Samo pakovanje / demontaža" },
-  { value: "ostalo", label: "Ostalo" },
-];
+// Vrednosti moraju TAČNO da se poklope sa opcijama u Google Formi (vidi actions.ts) —
+// Forma po vrednosti dropdown-a odlučuje da li upis uspeva.
+const moveTypes = ["Stambena selidba", "Poslovna selidba", "Samo pakovanje-demontaža", "Ostalo"];
 
 export function QuoteForm() {
   return (
@@ -40,8 +37,8 @@ export function QuoteForm() {
               Izaberi...
             </option>
             {moveTypes.map((type) => (
-              <option key={type.value} value={type.value}>
-                {type.label}
+              <option key={type} value={type}>
+                {type}
               </option>
             ))}
           </select>
