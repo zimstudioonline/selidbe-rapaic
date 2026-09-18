@@ -17,7 +17,6 @@ import {
   ArrowLeft,
   LayoutDashboard,
   type LucideIcon,
-  MessageSquare,
   Newspaper,
   ShieldCheck,
   Users,
@@ -36,7 +35,6 @@ const adminNavItems: AdminNavItem[] = [
   { href: "/admin", label: "Kontrolna tabla", icon: LayoutDashboard },
   { href: "/admin/korisnici", label: "Korisnici", icon: Users },
   { href: "/admin/blog", label: "Blog", icon: Newspaper },
-  { href: "/admin/upiti", label: "Upiti za selidbu", icon: MessageSquare },
   // @ludus:inject:admin-nav:links
 ];
 

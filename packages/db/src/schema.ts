@@ -24,5 +24,4 @@ export const notes = pgTable("notes", {
 });
 
 export * from "./posts";
-export * from "./moving-requests";
 // @ludus:inject:db:schema-exports

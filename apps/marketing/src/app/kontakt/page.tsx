@@ -1,7 +1,6 @@
-import { QuoteForm } from "@/components/sections/quote-form";
 import { contactInfo, mailHref, telHref, viberHref } from "@/lib/contact";
 import { buildMetadata } from "@/lib/seo";
-import { Alert, AlertDescription, Card, CardContent } from "@repo/ui";
+import { Card, CardContent } from "@repo/ui";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 export const metadata = buildMetadata({
@@ -11,13 +10,10 @@ export const metadata = buildMetadata({
   path: "/kontakt",
 });
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ message?: string; error?: string }>;
-}) {
-  const { message, error } = await searchParams;
+const GOOGLE_FORM_EMBED_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSc8aJ08t1UUnis5ijnLm-mtdAdcdoSFZ4SFp5h_p6FVl-krbA/viewform?embedded=true";
 
+export default function ContactPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-16">
       <h1 className="font-bold text-4xl text-ink">Kontakt</h1>
@@ -60,17 +56,15 @@ export default async function ContactPage({
         </div>
 
         <div className="lg:col-span-3">
-          {message ? (
-            <Alert className="mb-6">
-              <AlertDescription>{message}</AlertDescription>
-            </Alert>
-          ) : null}
-          {error ? (
-            <Alert variant="destructive" className="mb-6">
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          ) : null}
-          <QuoteForm />
+          <iframe
+            src={GOOGLE_FORM_EMBED_URL}
+            title="Forma za procenu selidbe"
+            width="100%"
+            height="1100"
+            className="rounded-lg border"
+          >
+            Učitavanje forme…
+          </iframe>
         </div>
       </div>
     </main>
